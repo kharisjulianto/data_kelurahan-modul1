@@ -6,7 +6,11 @@ import sys
 
 def main():
     """Run administrative tasks."""
+<<<<<<< HEAD
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'data_keluarahan.settings')
+=======
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'data_kelurahan.settings')
+>>>>>>> 64461c6 (Initial commit - menambahkan proyek Django data_kelurahan)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

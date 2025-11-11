@@ -50,7 +50,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+<<<<<<< HEAD
 ROOT_URLCONF = 'data_keluarahan.urls'
+=======
+ROOT_URLCONF = 'data_kelurahan.urls'
+>>>>>>> 64461c6 (Initial commit - menambahkan proyek Django data_kelurahan)
 
 TEMPLATES = [
     {
@@ -68,7 +72,11 @@ TEMPLATES = [
     },
 ]
 
+<<<<<<< HEAD
 WSGI_APPLICATION = 'data_keluarahan.wsgi.application'
+=======
+WSGI_APPLICATION = 'data_kelurahan.wsgi.application'
+>>>>>>> 64461c6 (Initial commit - menambahkan proyek Django data_kelurahan)
 
 
 # Database
