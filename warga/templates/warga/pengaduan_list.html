@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daftar Semua Pengaduan</title>
+</head>
+<body>
+    <h1>Daftar Seluruh Pengaduan</h1>
+
+    <ul>
+        {% for aduan in object_list %}
+            <li>
+                <strong>{{ aduan.judul }}</strong><br>
+                Pelapor: {{ aduan.pelapor.nama_lengkap }}<br>
+                Status: {{ aduan.get_status_display }}<br>
+                <p>{{ aduan.deskripsi }}</p>
+            </li>
+        {% empty %}
+            <li>Belum ada pengaduan.</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
