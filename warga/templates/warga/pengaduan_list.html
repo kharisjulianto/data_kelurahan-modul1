@@ -21,3 +21,14 @@
 
 </body>
 </html>
+
+<a href="{% url 'pengaduan-edit' aduan.pk %}">Edit</a> |
+<a href="{% url 'pengaduan-hapus' aduan.pk %}">Hapus</a>
+<li>
+    <strong>{{ aduan.judul }}</strong> - {{ aduan.pelapor.nama_lengkap }}
+    <br>
+    Status: {{ aduan.get_status_display }}
+    <br>
+    <a href="{% url 'pengaduan-edit' aduan.pk %}">Edit</a> |
+    <a href="{% url 'pengaduan-hapus' aduan.pk %}">Hapus</a>
+</li>
