@@ -68,3 +68,26 @@ class PengaduanDeleteView(DeleteView):
     model = Pengaduan
     template_name = 'warga/pengaduan_confirm_delete.html'
     success_url = reverse_lazy('pengaduan-list')
+
+
+# ---------------------
+# REST FRAMEWORK API
+# ---------------------
+
+from rest_framework import viewsets
+from .serializers import (
+    WargaSerializer,
+    PengaduanSerializer,        
+)
+
+from .models import Warga, Pengaduan
+
+
+class WargaViewSet(viewsets.ModelViewSet):
+    queryset = Warga.objects.all()
+    serializer_class = WargaSerializer
+
+
+class PengaduanViewSet(viewsets.ModelViewSet):
+    queryset = Pengaduan.objects.all()
+    serializer_class = PengaduanSerializer

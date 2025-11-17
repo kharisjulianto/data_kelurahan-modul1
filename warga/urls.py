@@ -8,9 +8,16 @@ from .views import (
     
     PengaduanListView,
     PengaduanCreateView,
-    PengaduanUpdateView,   # ⬅ WAJIB ADA
-    PengaduanDeleteView    # ⬅ WAJIB ADA
+    PengaduanUpdateView,
+    PengaduanDeleteView,
+
+    WargaViewSet,
+    PengaduanViewSet,
 )
+
+# ----------------------------
+# URL CRUD (template-based)
+# ----------------------------
 
 urlpatterns = [
     # WARGA
@@ -26,3 +33,15 @@ urlpatterns = [
     path('pengaduan/<int:pk>/edit/', PengaduanUpdateView.as_view(), name='pengaduan-edit'),
     path('pengaduan/<int:pk>/hapus/', PengaduanDeleteView.as_view(), name='pengaduan-hapus'),
 ]
+
+# ----------------------------
+# URL API (REST Framework)
+# ----------------------------
+
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(r'warga-api', WargaViewSet)
+router.register(r'pengaduan-api', PengaduanViewSet)
+
+urlpatterns += router.urls
