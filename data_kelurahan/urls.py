@@ -23,3 +23,16 @@ urlpatterns = [
     path('api/', include('warga.api_urls')),
 
 ]
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+
+    # URL HTML
+    path('warga/', include('warga.urls')),
+
+    # URL API
+    path('api/', include('warga.api_urls')),
+]
