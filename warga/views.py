@@ -192,10 +192,10 @@ from .serializers import WargaSerializer, PengaduanSerializer
 class WargaViewSet(viewsets.ModelViewSet):
     queryset = Warga.objects.all().order_by('-tanggal_registrasi')
     serializer_class = WargaSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]   # boleh read tanpa login
+    permission_classes = [IsAuthenticatedOrReadOnly]   
 
 class PengaduanViewSet(viewsets.ModelViewSet):
     queryset = Pengaduan.objects.all()
     serializer_class = PengaduanSerializer
-    # Tidak perlu permission_classes = [...] karena default setting = IsAuthenticated
+   
 
