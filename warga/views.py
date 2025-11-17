@@ -91,3 +91,17 @@ class WargaViewSet(viewsets.ModelViewSet):
 class PengaduanViewSet(viewsets.ModelViewSet):
     queryset = Pengaduan.objects.all()
     serializer_class = PengaduanSerializer
+
+
+from rest_framework.generics import ListAPIView, RetrieveAPIView
+from .serializers import WargaSerializer
+from .models import Warga
+
+class WargaListAPIView(ListAPIView):
+    queryset = Warga.objects.all()
+    serializer_class = WargaSerializer
+
+
+class WargaDetailAPIView(RetrieveAPIView):
+    queryset = Warga.objects.all()
+    serializer_class = WargaSerializer

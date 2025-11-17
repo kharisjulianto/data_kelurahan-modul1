@@ -15,9 +15,11 @@ from .views import (
     PengaduanViewSet,
 )
 
-# ----------------------------
-# URL CRUD (template-based)
-# ----------------------------
+from rest_framework.routers import DefaultRouter
+
+# -----------------------------------
+# URL CRUD (Template / HTML)
+# -----------------------------------
 
 urlpatterns = [
     # WARGA
@@ -34,11 +36,9 @@ urlpatterns = [
     path('pengaduan/<int:pk>/hapus/', PengaduanDeleteView.as_view(), name='pengaduan-hapus'),
 ]
 
-# ----------------------------
-# URL API (REST Framework)
-# ----------------------------
-
-from rest_framework.routers import DefaultRouter
+# -----------------------------------
+# URL API (Router untuk ViewSet)
+# -----------------------------------
 
 router = DefaultRouter()
 router.register(r'warga-api', WargaViewSet)
